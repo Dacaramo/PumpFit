@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PumpFit.RoutineInfoPage"
+             BackgroundColor="#343434">
+
+    <StackLayout Orientation="Vertical">
+        <ListView x:Name="routineExercisesListView" x:FieldModifier="public" SeparatorColor="#2C2C2C" RowHeight="100"
+                  GroupDisplayBinding="{Binding Title}" GroupShortNameBinding="{Binding ShortName}" IsGroupingEnabled="True" 
+                  SelectionMode="None" ItemTapped="RoutineExercisesListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowDefinitions="2*, *" ColumnDefinitions="*, *, *, *">
+                            <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="dumbbellBlueIcon.png"/>
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Name}" TextColor="White" 
+                                   FontSize="Large" FontFamily="Ubuntu" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Sets, StringFormat='{0}sets'}" TextColor="#9F9F9F" 
+                                   FontSize="Body" FontFamily="Ubuntu"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Reps, StringFormat='{0}reps'}" TextColor="#9F9F9F" 
+                                   FontSize="Body" FontFamily="Ubuntu"/>
+                            <Label Grid.Row="1" Grid.Column="3" Text="{Binding RestTime}" TextColor="#9F9F9F" 
+                                   FontSize="Body" FontFamily="Ubuntu"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Title}" HorizontalTextAlignment="Center" 
+                               FontSize="35"  FontFamily="PermanentMarker" TextColor="White"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+        </ListView>
+        <Button x:Name="addExerciseButton" Margin="10" WidthRequest="120" Text="Add exercise" FontFamily="Ubuntu" TextColor="#87BC72" BorderWidth="1" 
+                BorderColor="#87BC72" BackgroundColor="#2C2C2C" Clicked="AddExerciseButton_Clicked"/>
+    </StackLayout>
+    
+</ContentPage>

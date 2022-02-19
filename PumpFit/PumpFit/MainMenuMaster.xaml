@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PumpFit"
+             xmlns:custom="clr-namespace:PumpFit.MenuItems"
+             mc:Ignorable="d"
+             x:Class="PumpFit.MainMenuMaster"
+             Title="Master"
+             BackgroundColor="#2C2C2C">
+
+    <StackLayout>
+        <Label Text="Pump Fit" FontFamily="PermanentMarker" FontSize="60"  TextColor="White" HorizontalTextAlignment="Center"/>
+        <ListView x:Name="masterListView" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type custom:MasterPageItem}">
+                    <custom:MasterPageItem Title="Training Space" IconSource="muscleIcon.png" TargetType="{x:Type local:TrainingMainPage}"/>
+                    <custom:MasterPageItem Title="Stats" IconSource="statIcon.png" TargetType="{x:Type local:StatsMainPage}"/>
+                    <custom:MasterPageItem Title="Tips" IconSource="tipIcon.png" TargetType="{x:Type local:TipsMainPage}"/>
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10" ColumnDefinitions="30,*">
+                            <Image Grid.Column="0" Source="{Binding IconSource}"/>
+                            <Label Grid.Column="1" Text="{Binding Title}" FontFamily="Ubuntu" FontSize="Large" TextColor="#9F9F9F"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

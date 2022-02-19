@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PumpFit.Entity"
+             mc:Ignorable="d"
+             x:Class="PumpFit.AddExercisePage"
+             BackgroundColor="#343434">
+
+    <StackLayout x:Name="addExerciseStackLayout" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+        <Label x:Name="nameLabel" HorizontalTextAlignment="Center" TextColor="White" FontSize="Large" FontFamily="Ubuntu"/>
+        <Label Text="Enter the desired number of sets:" TextColor="#9F9F9F" FontSize="Body" FontFamily="Ubuntu"/>
+        <Entry x:Name="setsEntry" MaxLength="2" Placeholder="REPS" TextColor="#9F9F9F" FontFamily="Ubuntu" Keyboard="Numeric"/>
+        <Label Text="Enter the desired number of reps:" TextColor="#9F9F9F" FontSize="Body" FontFamily="Ubuntu"/>
+        <Entry x:Name="repsEntry" MaxLength="2" Placeholder="SETS" TextColor="#9F9F9F" FontFamily="Ubuntu" Keyboard="Numeric"/>
+        <Label Text="Select a rest time between sets:" TextColor="#9F9F9F" FontSize="Body" FontFamily="Ubuntu"/>
+        <Picker x:Name="restTimePicker" TextColor="#9F9F9F" FontFamily="Ubuntu" Title="REST">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>30s</x:String>
+                    <x:String>45s</x:String>
+                    <x:String>1min</x:String>
+                    <x:String>1min15s</x:String>
+                    <x:String>1min30s</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Label x:Name="routineNameLabel" Text="Select a name for the new routine:" TextColor="#9F9F9F" FontSize="Body" FontFamily="Ubuntu"/>
+        <Entry x:Name="routineNameEntry" Placeholder="MY ROUTINE" TextColor="#9F9F9F" FontFamily="Ubuntu" Keyboard="Text"/>
+        <Button x:Name="addButton" Margin="10" WidthRequest="120" Text="Add exercise" FontFamily="Ubuntu" TextColor="#87BC72" BorderWidth="1" 
+                    BorderColor="#87BC72" BackgroundColor="#2C2C2C" Clicked="AddButton_Clicked"/>
+
+    </StackLayout>
+    
+</ContentPage>

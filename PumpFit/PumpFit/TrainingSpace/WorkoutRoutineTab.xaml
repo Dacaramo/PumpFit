@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PumpFit"
+             xmlns:custom="clr-namespace:PumpFit.Entity"
+             mc:Ignorable="d"
+             x:Class="PumpFit.WorkoutRoutineTab"
+             Title="Workout"
+             BackgroundColor="#343434">
+
+    <StackLayout x:Name="routineStackLayout" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Margin="20,10">
+        <ListView x:Name="routineListView" x:FieldModifier="public" SeparatorColor="#2C2C2C" RowHeight="100" 
+                  SelectionMode="None" ItemTapped="RoutineListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="Center">
+                            <Label VerticalOptions="Center" Text="{Binding Name}" TextColor="White" FontSize="Title"  
+                                   FontFamily="Ubuntu"/>
+                            <Label VerticalOptions="Center" Text="{Binding CreationDate, StringFormat='Created {0}'}" 
+                                   TextColor="#9F9F9F" FontSize="Body" FontFamily="Ubuntu" HorizontalTextAlignment="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="addRoutineButton" WidthRequest="120" Text="Add routine" FontFamily="Ubuntu" TextColor="#87BC72" BorderWidth="1" 
+                BorderColor="#87BC72" BackgroundColor="#2C2C2C" Clicked="AddRoutineButton_Clicked"/>
+    </StackLayout> 
+
+</ContentPage>

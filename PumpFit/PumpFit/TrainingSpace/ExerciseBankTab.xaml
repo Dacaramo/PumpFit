@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PumpFit.ExerciseBankTab"
+             Title="Exercises"
+             BackgroundColor="#343434">
+
+    <!--EACH CHILD VIEW WITHIN THE ABSOLUTE LAYOUT SHOULD HAVE IT'S LayoutBounds AND LayoutFlags SET.
+    LayoutBounds IS: "x Position, y Position, with, height"
+    LayoutFlags IS: if one or more of the LayoutBounds values are absolute or proportional
+    [!] PROPORTIONAL VALUES ARE DOUBLES WITHIN 0 AND 1, BEING 1 THE TOTALITY OF THE DEVICE MESURE/DIMENSION-->
+    
+    <AbsoluteLayout>
+        <Image Source="arnoldFlexingIcon.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+        <StackLayout AbsoluteLayout.LayoutBounds="0.1, 0.68, 0.25, 0.22" AbsoluteLayout.LayoutFlags="All"
+                     Spacing="5">
+            <Button x:Name="forearmsButton" Text="Forearms" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="ForearmsButton_Clicked"/>
+            <Button x:Name="glutes_adductors_abductorsButton" Text="Glutes Adductors Abductors" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White"
+                    Padding="0" HeightRequest="55" Clicked="Glutes_adductors_abductorsButton_Clicked"/>
+            <Button x:Name="hamstringsButton" Text="Hamstrings" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="HamstringsButton_Clicked"/>
+            <Button x:Name="calvesButton" Text="Calves" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="CalvesButton_Clicked"/>
+        </StackLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0.95, 0.4" AbsoluteLayout.LayoutFlags="PositionProportional" WidthRequest="95"
+                     Spacing="30">
+            <Button x:Name="tricepsButton" Text="Triceps" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="TricepsButton_Clicked"/>
+            <Button x:Name="pecsButton" Text="Pecs" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="PecsButton_Clicked"/>
+            <Button x:Name="absButton" Text="Abs" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="AbsButton_Clicked"/>
+            <Button x:Name="quadricepsButton" Text="Quadriceps" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="QuadricepsButton_Clicked"/>
+        </StackLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0.025, 0.05" AbsoluteLayout.LayoutFlags="PositionProportional" WidthRequest="65"
+                     Spacing="30">
+            <Button x:Name="trapsButton" Text="Traps" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="TrapsButton_Clicked"/>
+            <Button x:Name="deltsButton" Text="Delts" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" 
+                    Padding="0" HeightRequest="30" Clicked="DeltsButton_Clicked"/>
+        </StackLayout>
+        <Button x:Name="bicepsButton" AbsoluteLayout.LayoutBounds="0.68, 0.082, 0.15, 0.03" AbsoluteLayout.LayoutFlags="All" 
+                Text="Biceps" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" Padding="0" HeightRequest="30"
+                Clicked="BicepsButton_Clicked"/>
+        <Button x:Name="backButton" AbsoluteLayout.LayoutBounds="0.28, 0.4, 0.13, 0.028" AbsoluteLayout.LayoutFlags="All" 
+                Text="Back" FontFamily="Ubuntu" BackgroundColor="#2C2C2C" TextColor="White" Padding="0" HeightRequest="30"
+                Clicked="BackButton_Clicked"/>
+    </AbsoluteLayout>
+
+</ContentPage>
